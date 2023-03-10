@@ -16,15 +16,15 @@ print(pocet_prstu)
 ### 2. Vytvořte objekt pocet_noh, která bude obsahovat počet nohou všech osob u vás doma a pak ji vytiskněte do konzole.
 pocet_noh = 2L * pocet_lidi
 ### 3. Vytvořte objekt pocet_nosu, která bude obsahovat počet nosů všech osob u vás doma a pak ji vytiskněte do konzole.
-
+pocet_nosu = pocet_lidi
 ### 4. Nevíme kolik máte doma pavouků, někde se schovávají, tak vytvořte objekt pocet_pavouku, jehož hodnota bude neznámá.
-
+pocet_pavouku = c()
 ### 5. Odečtěte od pocet_prstu rok vzniku jazyka R.
-
+pocet_prstu - 1993L
 ### 6. Vynásobte pocet_prstu počtem nohou a vydělte počtem nosů, celý tento výraz umocněte na -1.
-
+((pocet_prstu*pocet_noh)/pocet_nosu)^-1
 ### 7. Vynásobte pocet_prstu počtem nohou a vydělte počtem nosů, celý tento výraz umocněte na 1 000 000 000.
-
+((pocet_prstu * pocet_noh)/pocet_nosu)^1000000000
 ### 8. Vynásobte pocet_prstu počtem nohou a vydělte počtem nosů, celý tento výraz Odmocněte počtem nohou.
 
 ### 9. Spočtěte kolik osob je u vás doma na základě objektu pocet_prstu.
@@ -59,7 +59,9 @@ pocet_noh = 2L * pocet_lidi
 
 ### 24. Vypište druhý prvek vektoru domacnost.
 
+
 ### 25. Vytvořte vektor, který bude obsahovat celá čísla -7 až +9.
+
 
 ### 26. Vytvořte vektor, který bude obsahovat čísla 9,14,19, ... až po 55.
 
