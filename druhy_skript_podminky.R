@@ -43,5 +43,5 @@ m = mtcars["mpg"] <20
 l = mtcars["gear"] <5
 mtcars[c(m,l),]
 vektor2 <- as.numeric(vektor1)
-vektor2
+
        
