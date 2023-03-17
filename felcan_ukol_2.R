@@ -73,10 +73,7 @@ typeof(super_matice);str(super_matice);class(super_matice);summary(super_matice)
 moje_data <- data.frame(sloupec1=c("jedna","dva","tři","čtyři","pět"),sloupec2 = c(1,2,3,5,8),sloupec3 = c(13,21,34,55,89))
 moje_data
 ### 23. Prozkoumejte strukturu/obsah moje_data (funkce: str, summary, class, typeof ...).
-typeof(moje_data);
-str(moje_data);
-class(moje_data);
-summary(moje_data)
+  
 ### 24. Vypište názvy sloupců a řádků z moje_data.
 colnames(moje_data)
 row.names(moje_data)
@@ -84,25 +81,48 @@ row.names(moje_data)
 nrow(moje_data)
 ncol(moje_data)
 ### 26. Vyberte z moje_data všechny řádky ve kterých je v druhém sloupci hodnota rozdílná od 8 (pro všechny sloupce).
-moje_data$sloupec2[moje_data[2] !=8]
+moje_data[moje_data[2] !=8,]
 ### 27. Vyberte z moje_data všechny řádky ve kterých je v druhém sloupci hodnota (vyberte si nějakou vhodnou), opakujte pro první a třetí sloupec a následně podmínku spojte pomocí nebo a "a".
-moje_data[,]
+moje_data[1] != "ahoj"
+mooje_data[3] < 52
+moje_data[(moje_data[1] != "ahoj" & (moje_data[3] < 52 |moje_data[2] !=8)), ]
 ### 28. Z tabulky moje_data získejte součin názvů řádků tabulky.
-integer()
-### 29. V tabulce moje_data vytvořte dvěma způsoby nový sloupec s libovolným názvem a hodnotami c(2, NA, ...), za  ... doplnte libovolné hodnoty.
 
+product_of_row_names  = 1 
+for(n in as.numeric(c(row.names(moje_data)))){
+  product_of_row_names = product_of_row_names * n
+}
+product_of_row_names
+### 29. V tabulce moje_data vytvořte dvěma způsoby nový sloupec s libovolným názvem a hodnotami c(2, NA, ...), za  ... doplnte libovolné hodnoty.
+idk = c(2,NA,5,8,6)
+moje_data["sloupec5"] <- c(NA,NA,NA,NA,5)
+moje_data$sloupec4 <- idk
+cbind(moje_data,idk)
 ### 30. V tabulce moje_data vytvořte nový řádek s vhodnými daty.
 
+moje_data[6,1:ncol(moje_data)] <- c(NA,8,"patnáct",32,23)
 ### 31. Vytvořte kopii tabulky moje_data s názvem kopie_dat.
-
+kopie_dat <- data.frame(moje_data)
 ### 32. Spojte nejprve po sloupcich a následně po řádcích tabulky moje_data a kopie_dat.
-
+cbind(moje_data,kopie_dat)
+rbind(moje_data,kopie_dat)
 ### 33. Vynásobte počet sloupců, řádků a všech záznamů v tabulce.
-
+### V tabulce z úkolu č. 32 ? 
+temp1 = nrow(moje_data) * ncol(moje_data)
+temp2 = 1
+moje_numeric_data <- lapply(moje_data, as.numeric)
+x = unlist(unname(moje_numeric_data))
+while (temp2 < length(x)) {
+  if(!is.na(x[temp2])){
+    temp1 = temp1 * x[temp2]
+  }
+  temp2 = temp2+1
+}
+temp1
 ### 34. Vytvořte list který bude obsahovat
 ###  jmena jako vektor = ("Jano", "Anna", "Fero", "Lucia", "Milan", "Julia")
 ###  trida jako string = "2.A"
-###  farbaOci jako vektor stringů = ("Modre", "Zelene", "Hnede", "Sive", "Modre","Zelene")
+###  farbaOci jako vektor stringy = ("Modre", "Zelene", "Hnede", "Sive", "Modre","Zelene")
 ###  sportuje jako vektor booleanů = Ano, Ne, Ano, Ne, Ne, Ano
 ###  pocetPoznamek jako číselný vektor = (6, 1, 4, 5, 2, 0)
 ###  moje_data_v_listu jako moje_data 
